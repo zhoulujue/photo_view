@@ -82,10 +82,12 @@ class PhotoViewGalleryPageOptions {
     this.heroTag,
     this.minScale,
     this.maxScale,
+    this.initState = PhotoViewScaleState.contained,
   });
 
   final ImageProvider imageProvider;
   final Object heroTag;
   final dynamic minScale;
   final dynamic maxScale;
+  final PhotoViewScaleState initState;
 }
