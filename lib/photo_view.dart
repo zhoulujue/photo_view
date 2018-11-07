@@ -93,7 +93,10 @@ class PhotoView extends StatefulWidget {
     this.size,
     this.heroTag,
     this.scaleStateChangedCallback,
+    this.initScaleState = PhotoViewScaleState.contained,
   }) : super(key: key);
+
+  final PhotoViewScaleState initScaleState;
 
   /// Given a [imageProvider] it resolves into an zoomable image widget using. It
   /// is required
@@ -182,7 +185,7 @@ class _PhotoViewState extends State<PhotoView> {
   void initState() {
     super.initState();
     _getImage();
-    _scaleState = PhotoViewScaleState.contained;
+    _scaleState = widget.initScaleState;
   }
 
   @override
