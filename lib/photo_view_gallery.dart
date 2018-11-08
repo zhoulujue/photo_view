@@ -95,6 +95,6 @@ class PhotoViewGalleryPageOptions {
   final Object heroTag;
   final dynamic minScale;
   final dynamic maxScale;
-  final PhotoViewScaleStateChangedCallback scaleStateChangedCallback,
-  final PhotoViewScaleState initScaleState,
+  final PhotoViewScaleStateChangedCallback scaleStateChangedCallback;
+  final PhotoViewScaleState initScaleState;
 }
