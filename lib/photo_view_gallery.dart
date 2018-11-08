@@ -21,6 +21,7 @@ class PhotoViewGallery extends StatefulWidget {
   final bool gaplessPlayback;
   final PageController pageController;
   final PhotoViewGalleryPageChangedCallback onPageChanged;
+  final PhotoViewScaleStateChangedCallback outterScaleStateChangedCallback;
 
   @override
   State<StatefulWidget> createState() {
@@ -43,6 +44,9 @@ class _PhotoViewGalleryState extends State<PhotoViewGallery> {
     setState(() {
       _locked = scaleState != PhotoViewScaleState.contained;
     });
+    if (widget.outterScaleStateChangedCallback != null) {
+      widget.outterScaleStateChangedCallback(scaleState);
+    }
   }
 
   int get actualPage {
@@ -82,12 +86,14 @@ class PhotoViewGalleryPageOptions {
     this.heroTag,
     this.minScale,
     this.maxScale,
-    this.initState = PhotoViewScaleState.contained,
+    this.initScaleState = PhotoViewScaleState.contained,
+    this.scaleStateChangedCallback,
   });
 
   final ImageProvider imageProvider;
   final Object heroTag;
   final dynamic minScale;
   final dynamic maxScale;
-  final PhotoViewScaleState initState;
+  final PhotoViewScaleStateChangedCallback scaleStateChangedCallback,
+  final PhotoViewScaleState initScaleState,
 }
