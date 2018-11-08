@@ -13,6 +13,7 @@ class PhotoViewGallery extends StatefulWidget {
     this.gaplessPlayback = false,
     this.pageController,
     this.onPageChanged,
+    this.outterScaleStateChangedCallback,
   }) : super(key: key);
 
   final List<PhotoViewGalleryPageOptions> pageOptions;
